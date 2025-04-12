@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fitness Tracker</title>
+    <style>
+        .page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Fitness Tracker</h1>
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('goals')">Fitness Goals</button>
+        <button onclick="showPage('schedule')">Workout Schedule</button>
+        <button onclick="showPage('diet')">Diet Plan</button>
+        <button onclick="showPage('contact')">Contact Us</button>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page">
+        <h2>Home Page</h2>
+        <p>This website helps you track your fitness journey.</p>
+    </div>
+
+    <!-- Goals Page -->
+    <div id="goals" class="page">
+        <h2>Fitness Goals</h2>
+        <ul>
+            <li>Lose Fat</li>
+            <li>Build Muscle</li>
+            <li>Increase Strength</li>
+            <li>Improve Endurance</li>
+        </ul>
+    </div>
+
+    <!-- Schedule Page -->
+    <div id="schedule" class="page">
+        <h2>Workout Schedule</h2>
+        <table border="1">
+            <tr><th>Day</th><th>Workout</th></tr>
+            <tr><td>Monday</td><td>Chest + Triceps</td></tr>
+            <tr><td>Tuesday</td><td>Back + Biceps</td></tr>
+            <tr><td>Wednesday</td><td>Legs</td></tr>
+            <tr><td>Thursday</td><td>Shoulders</td></tr>
+            <tr><td>Friday</td><td>Cardio + Abs</td></tr>
+            <tr><td>Saturday</td><td>Full Body Stretch</td></tr>
+            <tr><td>Sunday</td><td>Rest</td></tr>
+        </table>
+    </div>
+
+    <!-- Diet Page -->
+    <div id="diet" class="page">
+        <h2>Diet Plan</h2>
+        <ul>
+            <li>Breakfast: Oats + Eggs</li>
+            <li>Lunch: Brown Rice + Chicken + Veggies</li>
+            <li>Snack: Fruits + Nuts</li>
+            <li>Dinner: Grilled Fish + Salad</li>
+        </ul>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <h2>Contact Us</h2>
+        <form>
+            <label>Name:</label><br>
+            <input type="text" name="name"><br>
+            <label>Email:</label><br>
+            <input type="email" name="email"><br>
+            <label>Message:</label><br>
+            <textarea name="message"></textarea><br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <script>
+        function showPage(page) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(page).style.display = 'block';
+        }
+
+        // Default to show Home page first
+        showPage('home');
+    </script>
+</body>
+</html>
